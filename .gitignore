@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+logs/
+addok-data/
+*.egg-info
+*.csv
+*.parquet
+*.zip
+
+# Virtual environments
+.venv
+
+# Données PostgreSQL locales
+pgdata/
