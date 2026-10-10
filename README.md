@@ -1,5 +1,16 @@
 # canvass-import-rpls
 
+## Prérequis
+
+- **[uv](https://docs.astral.sh/uv/)** : il gère la version de Python (3.12, fixée dans `.python-version`) et les dépendances du projet. Pour l'installer, voir la [documentation d'installation](https://docs.astral.sh/uv/getting-started/installation/).
+- **Dépendances Python** : à installer avant d'utiliser les scripts, depuis la racine du projet :
+
+  ```bash
+  uv sync
+  ```
+
+  Cette commande crée l'environnement virtuel `.venv` et y installe les paquets listés dans `pyproject.toml`. Les scripts se lancent ensuite avec `uv run python <script>.py`.
+
 ## main.py
 
 Génère le fichier `2025_rpls_lazy.parquet` à partir du CSV du RPLS, en ajoutant à chaque logement l'identifiant de son adresse dans la BAN (Base Adresse Nationale), colonne `result_id`.
@@ -20,8 +31,6 @@ Le CSV est lu en streaming avec `polars`. Chaque lot est envoyé au géocodeur [
   curl -L -o addok-france-bundle.zip https://adresse.data.gouv.fr/data/ban/adresses/latest/addok/addok-france-bundle.zip
   unzip addok-france-bundle.zip -d addok-data
   ```
-
-- **Dépendances Python** : `uv sync`.
 
 ### Utilisation
 
